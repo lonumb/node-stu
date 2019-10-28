@@ -41,7 +41,7 @@ const fs = require("fs");
 //     });
 //     setTimeout(()=>{
 //         wh.close();
-//     },10000)
+//     },60000)
 // }
 
 
@@ -55,8 +55,8 @@ const fs = require("fs");
 //     stm.on('open',(fd)=>{
 //         console.log('open=>',fd);
 //     });
-//     stm.on('ready',(err)=>{
-//         console.log('ready=>',err);
+//     stm.on('ready',()=>{
+//         console.log('ready=>ready complete');
 //         console.log(stm.path);
 //         console.log(stm.bytesRead);
 //         console.log(stm.pending);
@@ -64,8 +64,8 @@ const fs = require("fs");
 //     stm.on('data',(chunk)=>{
 //         console.log('data=>',chunk);
 //     });
-//     stm.on('end',(err)=>{
-//         console.log('end=>',err);
+//     stm.on('end',()=>{
+//         console.log('end=>');
 //     });
 //     stm.on('close',(err)=>{
 //         console.log('close=>',err);
@@ -109,13 +109,21 @@ const fs = require("fs");
 //     ws.on('close',()=>{
 //       console.log('文件已关闭！');
 //     })
-//     ws.write('测试一段文字 \n');
-//     ws.end();
+//     let i = 1;
+//     let timer = setInterval(()=>{
+//       i++;
+//       ws.write('测试一段文字 \n');
+//       console.log('测试一段文字 \n');
+//       if(i>10){
+//         clearInterval(timer);
+//         ws.end();
+//       }
+//     },1000)
 // }
 
 
 // fs操作方法 -------------------------------
 
-fs.access('./test2.txt',fs.constants.W_OK,(err)=>{
-    console.log(err ? '0': '1');
-})
+// fs.access('./test2.txt',fs.constants.W_OK,(err)=>{
+//     console.log(err ? '0': '1');
+// })
