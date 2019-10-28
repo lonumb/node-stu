@@ -94,11 +94,28 @@ const fs = require("fs");
 
 
 // WriteStream 类 -------------------------------
-const writer = getWritableStreamSomehow();
-for (let i = 0; i < 100; i++) {
-  writer.write(`写入 #${i}!\n`);
-}
-writer.end('写入结尾\n');
-writer.on('finish', () => {
-  console.error('写入已完成');
-});
+// write('./test1.txt');
+// function write(path){
+//     const ws = fs.createWriteStream(path,{flags: 'a'});
+//     ws.on('error',(err)=>{
+//       console.log('error=>',err);
+//     })
+//     ws.on('open',(fd)=>{
+//       console.log('open=>',fd);
+//     })
+//     ws.on('finish',()=>{
+//       console.log('finish=>',fs.readFileSync(path, 'utf8'));
+//     })
+//     ws.on('close',()=>{
+//       console.log('文件已关闭！');
+//     })
+//     ws.write('测试一段文字 \n');
+//     ws.end();
+// }
+
+
+// fs操作方法 -------------------------------
+
+fs.access('./test2.txt',fs.constants.W_OK,(err)=>{
+    console.log(err ? '0': '1');
+})
