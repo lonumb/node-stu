@@ -1,0 +1,13 @@
+{
+  "name": "mh-server",
+  "version": "1.0.0",
+  "description": "the plugin is used for test. do not use",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": ""
+  },
+  "keywords": ["test plugin","http-server"],
+  "author": "mh_lonumb",
+  "license": "ISC"
+}
