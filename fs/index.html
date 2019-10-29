@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,body{height:100%; width:100%; margin: 0px; padding: 0px; border: none;}
+        .cus-main{height:100%; width:100%;}
+    </style>
+</head>
+<body>
+    <iframe scr="" id="cusIframe" frameborder="0" class="cus-main"></iframe>
+
+    <script>
+
+        var path = location.host.indexOf('daoliangroup') != -1 ? "http://daolian.w120.mc-test.com" 
+            : "http://dongyu2018.w45.mc-test.com/";
+
+            console.log(path);
+            document.getElementById("cusIframe").src = path;
+
+        
+
+    </script>
+</body>
+</html>
